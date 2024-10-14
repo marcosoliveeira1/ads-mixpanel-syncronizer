@@ -1,0 +1,6 @@
+POST http://localhost:3000/sync/facebook-ads
+Content-Type: application/json
+
+{
+    "date": "2024-10-12"
+}

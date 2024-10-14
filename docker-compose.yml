@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: install  # Targets the install stage for dev dependencies
+    ports:
+      - "${PORT}:3000"
+    environment:
+      NODE_ENV: development
+    volumes:
+      - .:/usr/src/app  # Mounts code for live editing
+      - /usr/src/app/node_modules  # Avoids overwriting node_modules
+    command: bun run dev  # Replace with your dev command
+    networks:
+      - app-network
+
+  app-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: release  # Targets the release stage for production
+    ports:
+      - "${PORT}:3000"
+    environment:
+      NODE_ENV: production
+    networks:
+      - app-network
+    restart: always
+    command: bun run index.ts  # Replace with your prod start command
+
+networks:
+  app-network:
+    driver: bridge

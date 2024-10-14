@@ -1,0 +1,24 @@
+{
+  "name": "ads-mixpanel-syncronizer",
+  "module": "src/main.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/main.ts",
+    "build": "bun run build",
+    "start": "bun src/main.ts"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/facebook-nodejs-business-sdk": "^20.0.2",
+    "@types/mixpanel": "^2.14.9",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "facebook-nodejs-business-sdk": "^21.0.0",
+    "mixpanel": "^0.18.0"
+  }
+}
