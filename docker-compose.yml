@@ -17,20 +17,20 @@ services:
     networks:
       - app-network
 
-  app-prod:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: release  # Targets the release stage for production
-    ports:
-      - "${PORT}:3000"
-    environment:
-      NODE_ENV: production
-    networks:
-      - app-network
-    restart: always
-    command: bun run index.ts  # Replace with your prod start command
+  # app-prod:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #     target: release  # Targets the release stage for production
+  #   ports:
+  #     - "${PORT}:3000"
+  #   environment:
+  #     NODE_ENV: production
+  #   networks:
+  #     - app-network
+  #   restart: always
+  #   command: bun run index.ts  # Replace with your prod start command
 
-networks:
-  app-network:
-    driver: bridge
+# networks:
+#   app-network:
+#     driver: bridge
