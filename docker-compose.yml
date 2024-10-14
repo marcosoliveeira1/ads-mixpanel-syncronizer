@@ -14,8 +14,8 @@ services:
       - .:/usr/src/app  # Mounts code for live editing
       - /usr/src/app/node_modules  # Avoids overwriting node_modules
     command: bun run dev  # Replace with your dev command
-    networks:
-      - app-network
+    # networks:
+    #   - app-network
 
   # app-prod:
   #   build:
